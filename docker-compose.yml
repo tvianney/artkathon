@@ -1,0 +1,27 @@
+services:
+  artkathon-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: artkathon-web
+    ports:
+      - "5001:5001"
+    volumes:
+      - artkathon-uploads:/app/web_app/uploads
+      - artkathon-outputs:/app/web_app/outputs
+      - ./data:/app/data
+    environment:
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - artkathon-network
+
+networks:
+  artkathon-network:
+    driver: bridge
+
+volumes:
+  artkathon-uploads:
+  artkathon-outputs:
+
