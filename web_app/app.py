@@ -93,6 +93,9 @@ def download_image(filename):
         }), 404
 
 if __name__ == '__main__':
-    print("Serveur IRIS sur http://localhost:5000")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    import os
+    debug_mode = os.getenv('FLASK_ENV') == 'development'
+    print(f"🎨 Serveur IRIS Artkathon sur http://localhost:5001")
+    print(f"Mode: {'Développement' if debug_mode else 'Production'}")
+    app.run(debug=debug_mode, host='0.0.0.0', port=5001)
 
