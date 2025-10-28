@@ -1,64 +1,50 @@
-# 🎨 Générateur d'Art Abstrait IRIS
+# IRIS Art Generator
 
-## Description du projet
+Générateur d'art abstrait basé sur le dataset IRIS. Transforme les données en œuvres visuelles uniques.
 
-Ce programme génère automatiquement une œuvre d'art abstraite à partir des données du dataset IRIS (mesures de fleurs). Chaque fleur est transformée en une forme géométrique colorée dont les propriétés visuelles dépendent directement des données.
-
-## 📊 Mapping des données vers l'art
-
-| Donnée | Transformation visuelle |
-|--------|------------------------|
-| `sepal_length` | Position X (horizontale) |
-| `sepal_width` | Position Y (verticale) |
-| `petal_length` | Taille de la forme |
-| `petal_width` | Nombre de côtés (3-8) |
-| `species` | Palette de couleurs |
-| Index | Rotation et opacité |
-
-## 🎨 Style artistique
-
-- **Formes** : Polygones géométriques (triangles, carrés, pentagones, hexagones, etc.)
-- **Couleurs** : 3 palettes distinctes selon l'espèce de fleur
-  - 🔴 Iris-setosa : Tons rouges/roses
-  - 🔵 Iris-versicolor : Tons bleus
-  - 🟣 Iris-virginica : Tons violets
-- **Effet** : Superposition avec opacité progressive
-
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 artkathon/
-├── IRIS.csv              # Données source
-├── explore_data.py       # Script d'exploration des données
-├── art_generator.py      # Générateur d'art principal
-├── iris_art.png          # Image générée (après exécution)
-└── README.md            # Documentation
+├── data/              # Données (IRIS.csv)
+├── src/               # Scripts Python utilitaires
+├── docs/              # Documentation
+├── config/            # Fichiers de configuration
+├── web_app/           # Application web Flask
+│   ├── app.py         # Serveur Flask
+│   ├── art_engine.py  # Moteur de génération d'art
+│   ├── static/        # CSS, JS, assets
+│   ├── templates/     # Templates HTML
+│   ├── uploads/       # Fichiers temporaires
+│   └── outputs/       # Images générées
+└── requirements.txt   # Dépendances Python
 ```
 
-## 🚀 Installation
+## Installation
 
 ```bash
-# Installer les dépendances
-sudo apt install python3-pandas python3-pil
+pip install -r requirements.txt
 ```
 
-## ▶️ Utilisation
+## Lancement
 
 ```bash
-# Générer l'œuvre d'art
-python3 art_generator.py
+cd web_app
+python3 app.py
 ```
 
-L'image `iris_art.png` (1920x1080) sera créée dans le répertoire courant.
+Ouvrez votre navigateur sur http://localhost:5000
 
-## 🔧 Personnalisation
+## Utilisation
 
-Vous pouvez modifier dans `art_generator.py` :
-- `WIDTH` et `HEIGHT` : Dimensions de l'image
-- `BACKGROUND_COLOR` : Couleur de fond
-- `COLOR_PALETTES` : Palettes de couleurs par espèce
-- La logique de mapping dans `draw_flower()`
+1. Les données IRIS se chargent automatiquement
+2. Modifiez les valeurs dans le tableau si besoin
+3. Cliquez sur "Générer l'art"
+4. Téléchargez votre œuvre unique
 
-## 📝 Licence
+## Technologies
 
-Projet éducatif - Artkathon 2025
+- Python 3.x
+- Flask
+- Pillow (PIL)
+- Pandas
