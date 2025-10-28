@@ -2,7 +2,11 @@
 
 ## 👥 Équipe
 
-<!-- À compléter avec les membres de votre équipe -->
+- LEBRETON Benjamin
+- SINTONDJI Ange Bignon
+- SULTANA Parvin
+- SLIMANI Ouassim
+- TOUILLON Vianney
 
 ## 📖 Description du projet
 
@@ -108,3 +112,4 @@ artkathon/
 - **Génération d'images** : Pillow (PIL)
 - **Frontend** : HTML5, CSS3, JavaScript vanilla
 - **Déploiement** : Docker, Docker Compose
+
